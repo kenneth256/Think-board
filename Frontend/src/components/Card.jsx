@@ -51,7 +51,7 @@ const navigate = Navigate()
           <span className="text-sm text-base-content/60">{formatDate(note.createdAt)}</span>
           <div className="flex items-center gap-1">
             <button onClick={handleEdit} className="btn btn-ghost btn-xs">
-              <PenSquareIcon className="size-4" handleEdit(e, note._id) />
+              <PenSquareIcon className="size-4" onClick={(e) => handleEdit(e, note._id)} />
             </button>
             <button onClick={(e) => handleDelete(e, note._id)} className="btn btn-ghost btn-xs text-error">
               <Trash2Icon className="size-4" />
