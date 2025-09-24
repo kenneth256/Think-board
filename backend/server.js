@@ -61,7 +61,7 @@ const startServer = async() => {
         
         app.use(express.json());
         app.use(handler)
-        app.use("/api/notes", notesRoutes);  // UNCOMMENTED
+        app.use("/api/notes", notesRoutes);
        
         // Test route to verify server works
         app.get('/api/test', (req, res) => {

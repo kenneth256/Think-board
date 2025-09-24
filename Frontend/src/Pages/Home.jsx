@@ -33,7 +33,6 @@ const Home = () => {
         fetchNotes();
     }, []);
 
-    // Delete handler function
     const handleDelete = async (noteId) => {
         try {
             await api.delete(`/notes/${noteId}`);
