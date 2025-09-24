@@ -24,38 +24,21 @@ export async function getNote(req, res) {
 }
 export async function createNote(req, res) {
     try {
-        console.log('=== CREATE NOTE DEBUG ===');
-        console.log('Request body:', req.body);
-        console.log('Database connection state:', mongoose.connection.readyState);
-        console.log('Database name:', mongoose.connection.name);
-        
         const { title, note } = req.body;
         if (!title || !note) {
-            console.log('Validation failed: missing title or note');
             return res.status(400).json({ error: "Title and note are required" });
         }
 
-        console.log('Creating note with title:', title);
         const newNote = new Note({ title, note });
-        console.log('Note object created:', newNote);
-        
-        console.log('Attempting to save to database...');
         await newNote.save();
-        console.log('Note saved successfully:', newNote._id);
 
         return res.status(201).json({
             message: "Note created successfully!",
             note: newNote,
         });
     } catch (error) {
-        console.error("=== ERROR CREATING NOTE ===");
-        console.error("Error message:", error.message);
-        console.error("Error name:", error.name);
-        console.error("Full error:", error);
-        return res.status(500).json({ 
-            error: "Failed to create note",
-            details: error.message 
-        });
+        console.error("Error creating note:", error);
+        return res.status(500).json({ error: "Failed to create note" });
     }
 }
 
