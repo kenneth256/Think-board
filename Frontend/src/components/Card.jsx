@@ -1,11 +1,12 @@
 
 import { PenSquareIcon, Trash2Icon } from 'lucide-react';
-import { Link, Navigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { toast } from 'react-hot-toast';
 import api from '../Utilitis';
 
 const NoteCard = ({ note, setNotes }) => {
-const navigate = Navigate()
+
+  const navigate = useNavigate()
 
   
   const formatDate = (dateString) => {
@@ -50,8 +51,8 @@ const navigate = Navigate()
         <div className="card-actions justify-between items-center mt-4">
           <span className="text-sm text-base-content/60">{formatDate(note.createdAt)}</span>
           <div className="flex items-center gap-1">
-            <button onClick={handleEdit} className="btn btn-ghost btn-xs">
-              <PenSquareIcon className="size-4" onClick={(e) => handleEdit(e, note._id)} />
+            <button onClick={(e) => handleEdit(e, note._id)} className="btn btn-ghost btn-xs">
+              <PenSquareIcon className="size-4"/>
             </button>
             <button onClick={(e) => handleDelete(e, note._id)} className="btn btn-ghost btn-xs text-error">
               <Trash2Icon className="size-4" />
