@@ -1,0 +1,16 @@
+{
+  "name": "think",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix Frontend && npm run build --prefix Frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "Full-stack notes application"
+}
