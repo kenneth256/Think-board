@@ -72,7 +72,7 @@ const Notedetails =  () => {
           <label className='label'>Note</label>
           <textarea className='textarea rounded-b-sm h-[150px] text-accent' value={content} onChange={(e) => setContent(e.target.value)} />
         </div>
-        <button className='btn w-full btn-secondary py-2' type='submit'> {setSaving ? 'Saving...' : "Save changes" }</button>
+        <button className='btn w-full btn-secondary py-2' type='submit'> {saving ? 'Saving...' : "Save changes" }</button>
       </form>
 
     </div>
