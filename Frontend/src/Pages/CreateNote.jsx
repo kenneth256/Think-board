@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router';
+import api from '../Utilitis';
 
 const CreateNote = () => {
   const [title, setTitle] = useState('');
@@ -19,7 +20,7 @@ const CreateNote = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/notes', {
+      await api.post('/notes', {
         title,
         note,
       });
