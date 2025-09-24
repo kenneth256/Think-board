@@ -20,7 +20,7 @@ const NoteCard = ({ note, setNotes }) => {
   const handleEdit = (e, id) => {
     e.preventDefault();
     e.stopPropagation();
-    navigate('/noteDetails/${id}')
+    navigate(`/noteDetails/${id}`)
   };
 
   const handleDelete = async (e, id) => {
